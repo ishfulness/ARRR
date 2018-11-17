@@ -482,6 +482,15 @@ def normalize_config_quantity(quantity):
 
 
 
+def round_config_quantity(quantity, precision = 5):
+    for pos, pos_info in configuration.items():
+        if quantity in pos_info:
+            configuration[pos][quantity] = round(pos_info[quantity], precision)
+
+
+
+
+
 def other_items_to_svg_string():
         
     svg = []
